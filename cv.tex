@@ -11,12 +11,36 @@
 \lhead{\hspace*{-\sectionwidth}Stephen Wattam} % force lhead all the way left
 \rhead{Page \thepage}  % put page number at right
 \cfoot{}  % the footer is empty
-\pagestyle{fancy} % set pagestyle for the document
+\pagestyle{fancy} % set pagestyle for the documenti
+
+\usepackage{tikz}   % Draw the nice footer
+\usetikzlibrary{decorations.fractals}
+\newcommand{\footersep}{
+    \begin{center}
+        \begin{tikzpicture}
+            \draw [
+                gray,
+                line width = 0.01mm, 
+            ](-0.05\linewidth, 0) -- (0, 0);
+            \draw [
+                gray,
+                decoration = Koch curve type 2,
+                line width = 0.01mm, 
+            ] decorate{ decorate{ (0, 0) -- (0.05\linewidth, 0) }};
+            \draw [
+                gray,
+                line width = 0.01mm, 
+            ](0.05\linewidth, 0) -- (0.1\linewidth, 0);
+        \end{tikzpicture}
+    \end{center}
+}
 
 \begin{document} 
 \thispagestyle{empty} % this page does not have a header
 \name{Stephen Wattam}
-\address{\texttt{http://stephenwattam.com/}}
+\address{\\
+\texttt{<steve@stephenwattam.com>}\\
+\texttt{http://stephenwattam.com/}}
 %     222 South Main Street\\
 % North Adams, MA 01247\\
 % (413) 555 - 8610}
@@ -24,7 +48,7 @@
 
 \begin{resume}
 \vspace{0.2in}
-\moveleft.5\sectionwidth\centerline{\it Curriculum Vit\ae --- 01-08-2014}  
+\moveleft.5\sectionwidth\centerline{\it Curriculum Vit\ae~---~01-08-2014}  
 
 \section{EDUCATION}
 \vspace{0.1in} 
@@ -42,6 +66,41 @@
     Computer Science Innovation, 
     \textit{``Adapting Speculative Execution for High-level Distributed Processing''}
     2006--2009
+
+
+
+\section{RELEVANT EMPLOYMENT} 
+\vspace{0.1in} 
+
+    {\bf Senior Research Associate},
+    Centre for Corpus Approaches to Social Science (CASS),
+    Lancaster University,
+    2013-2014.
+
+    {\bf Research Assistant}, 
+    School of Computing and Communications, 
+    Lancaster University, 
+    2013--present.
+
+    {\bf Teaching Assistant}, 
+    School of Computing and Communications, 
+    Lancaster University, 
+    2009--present.
+
+    {\bf Freelance Projects} 
+    \begin{itemize}
+        \item Scuttlebutt---Web scraping for linguistic data
+        \item Data processing and front-end for the Metaphors in End-of-life Care (MELC) project
+        \item Web scraping projects for multiple clients
+        \item Porting an NLP toolchain to tag the Hansard corpus
+        \item Sylword syllable counting tool
+    \end{itemize}
+    
+    {\bf Consultant}, 
+    Momote ltd.
+    2008 (May--Oct)
+
+
 
  
 \section{SKILLS} 
@@ -78,45 +137,22 @@
         \item[] Work on a number of projects as a research assistant, and managed many small freelance projects.
        \end{itemize} 
  
-\section{RELEVANT EMPLOYMENT} 
-\vspace{0.1in} 
 
-    {\bf Senior Research Associate},
-    Centre for Corpus Approaches to Social Science (CASS),
-    Lancaster University,
-    2013-2014.
 
-    {\bf Research Assistant}, 
-    School of Computing and Communications, 
-    Lancaster University, 
-    2013--present.
-
-    {\bf Teaching Assistant}, 
-    School of Computing and Communications, 
-    Lancaster University, 
-    2009--present.
-
-    {\bf Freelance Projects} 
-    \begin{itemize}
-        \item Scuttlebutt---Web scraping for linguistic data
-        \item Data processing and front-end for the Metaphors in End-of-life Care (MELC) project
-        \item Web scraping projects for multiple clients
-        \item Porting the USAS toolchain to tag the Hansard corpus
-        \item Sylword syllable counting tool
-    \end{itemize}
-    
-    {\bf Consultant}, 
-    Momote ltd.
-    2008 (May--Oct)
-
- 
 \section{PUBLICATIONS} 
 \vspace{0.1in}
+
+``Characterising the Physicality of Everyday Buttons``,
+Pending publication: {\it ACM Interactive Tabletops and Surfaces '14},
+Dresden,
+September 2014
+
 
 ``Experiences Parallelising an Existing NLP Pipeline: Tagging Hansard'',
 Proceedings: {\it Language Resources and Evaluation '14},
 Reykjavik,
 May 2014
+
 
 ``Using Life-Logging to Re-Imagine Representativeness in Corpus Design'',
 Proceedings: {\it Corpus Linguistics '13},
@@ -129,6 +165,7 @@ Proceedings: {\it ACL SIGWAC Web-as-Corpus 8},
 Lancaster,
 May 2013
 
+
 ``Document Attrition in Web Corpora: an Exploration'',
 Proceedings: {\it Language Resources and Evaluation '12}, 
 Istanbul,
@@ -140,35 +177,8 @@ Proceedings: {\it Corpus Linguistics '11},
 Birmingham,
 July 2011
 
+
+\footersep
+
 \end{resume}
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
